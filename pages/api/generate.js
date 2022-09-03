@@ -1,4 +1,4 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+
 import generateId from "../../modules/generateId"
 
 const { connectToDatabase } = require('../../modules/mongodb');
