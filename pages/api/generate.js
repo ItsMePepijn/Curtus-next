@@ -15,5 +15,5 @@ export default function handler(req, res) {
     else return res.status(401).json({ error: "Invalid API key" });
   }
 
-  else return res.status(405).json({ error: "Method not allowed, POST must be used for this endpoint" });
+  else return res.status(405).json({ error: "Method not allowed, POST must be used for this endpoint", usedMethod: req.method });
 }
