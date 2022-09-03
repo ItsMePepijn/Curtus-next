@@ -8,6 +8,10 @@ const nextConfig = {
         source: '/api',
         destination: '/apiInfo',
       },
+      {
+        source: '/api/:path*',
+        destination: '/apiInfo/:path*',
+      }
     ]
   },
 }
