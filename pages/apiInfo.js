@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import styles from '../styles/Home.module.scss'
 
 export default function Api() {
@@ -16,8 +17,7 @@ export default function Api() {
         </h1>
 
         <p className={styles.description}>
-          Get started by reading{' '}
-          <code className={styles.code}><a href='/docs'>/docs</a></code>
+          Get started by reading <Link href={"/docs"}><a>/docs</a></Link>
         </p>
       </main>
 
