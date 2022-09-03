@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import Error from 'next/error'
 import { useRouter } from 'next/router'
+
+import Error404 from './404'
 
 import styles from '../styles/Home.module.scss'
 
@@ -10,8 +11,8 @@ export default function Api() {
   const { id } = router.query
   
   const re = /[A-Z]{5}/
-  if(!re.test(id)) return <Error statusCode={404} />
-  
+  if(!re.test(id)) return <Error404 />
+
   return(
     <div className={styles.container}>
       <Head>
