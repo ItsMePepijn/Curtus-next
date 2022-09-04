@@ -13,12 +13,14 @@ export default function Home() {
       </Head>
 
       <NavBar />
+      <div className={styles.sliderThumb}></div>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to the link shortener!
-        </h1>
+        <div className={styles.mainContent}>
+          <h1 className={styles.title}>Curtus</h1>
 
+          <h2 className={styles.subTitle}>Shortening link made <a className={styles.special}>easy</a> and <a className={styles.special}>safe</a>.</h2>
+        </div>
       </main>
     </div>
   )
