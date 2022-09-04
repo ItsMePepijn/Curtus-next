@@ -25,7 +25,7 @@ export default async function handler(req, res) {
 
       const user = (key === "USR_") ? "Anonymous user" : "User"
     
-      return res.status(201).json({ ID: ID, type: user, generatedLink: `https://dummy-site.com/${ID}`, originalAddress: url});
+      return res.status(201).json({ ID: ID, type: user, generatedLink: `https://curtus.tech/${ID}`, originalAddress: url});
 
     } 
     catch(e){
