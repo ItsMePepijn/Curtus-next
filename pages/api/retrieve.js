@@ -1,4 +1,3 @@
-import {useRouter} from 'next/router';
 
 const { connectToDatabase } = require('../../modules/mongodb');
 
