@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import NavBar from '../../components/navBar'
 import styles from '../../styles/Home.module.scss'
 
 export default function Api() {
@@ -10,6 +11,8 @@ export default function Api() {
         <meta name="description" content="THE link shortening solution for creating your short links made easy and safe!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <NavBar />
 
       <main className={styles.main}>
         <h1 className={styles.title}>

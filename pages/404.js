@@ -1,6 +1,8 @@
 import Head from "next/head"
 import styles from '../styles/Home.module.scss'
 
+import NavBar from "../components/navBar"
+
 export default function Error404() {
   return (
     <div className={styles.container}>
@@ -10,6 +12,8 @@ export default function Error404() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
+      <NavBar />
+
       <h1>404 - Page Not Found</h1>
     </div>
   )

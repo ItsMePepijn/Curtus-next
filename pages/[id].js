@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import Error404 from './404'
 
 import styles from '../styles/Home.module.scss'
+import NavBar from '../components/navBar'
 
 export default function Api({data}) {
   const router = useRouter()
@@ -18,10 +19,12 @@ export default function Api({data}) {
   return(
     <div className={styles.container}>
       <Head>
-        <title>Link shortener</title>
-        <meta name="description" content="THE link shortening solution for creating your short links made easy and safe!" />
+        <title>Curtus | Shortening Links Made Easy and Safe</title>
+        <meta name="description" content="Curtus is a link shortening solution for creating your short links, made EASY and SAFE!"/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <NavBar />
 
       <main className={styles.main}>
         <h1 className={styles.title}>
@@ -29,10 +32,12 @@ export default function Api({data}) {
         </h1>
 
         <p className={styles.description}>
-          {ID}
-          <br />
           {originalAddress}
         </p>
+
+        <a href={originalAddress}>
+          <h2>Yes, I am sure &rarr;</h2>
+        </a>
       </main>
 
     </div>
