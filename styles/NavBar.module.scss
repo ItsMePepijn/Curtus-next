@@ -1,0 +1,43 @@
+
+.navBar{
+  margin: 10px 250px;
+  padding: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: bolder;
+  font-size: 18px;
+
+  &Links{
+    display: flex;
+    gap: 35px;
+
+    &Active{
+      color: #e4650a;
+    }
+  }
+
+  &Logo{
+    margin-right: auto;
+  }
+
+  &Login{
+    margin-left: auto;
+    padding: 8px 16px;
+
+    background: rgb(255,183,74);
+    background: linear-gradient(140deg, rgb(248, 171, 56) 0%, rgba(228,101,10,1) 50%, rgba(255,23,23,1) 100%);
+
+    border-radius:  20px;
+
+    font-weight: normal;
+    color: white;
+
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+}
+
+
