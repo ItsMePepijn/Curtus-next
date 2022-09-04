@@ -40,13 +40,7 @@ export default function Api({data}) {
 }
 
 export async function getServerSideProps(router){
-  let fetched = await fetch('http://localhost:3000/api/retrieve', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ key: "USR_", id: router.query.id })
-  });
+  let fetched = await fetch(`http://localhost:3000/api/retrieve?id=${router.query.id}`, {method: 'GET' });
 
   let data = await fetched.json();
 
