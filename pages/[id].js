@@ -5,13 +5,15 @@ import Error404 from './404'
 
 import styles from '../styles/Home.module.scss'
 
-
-export default function Api() {
+export default function Api({data}) {
   const router = useRouter()
   const { id } = router.query
   
   const re = /[A-Z]{5}/
   if(!re.test(id)) return <Error404 />
+
+  if(!data.ID) return <Error404 />
+  const { ID , originalAddress } = data;  
 
   return(
     <div className={styles.container}>
@@ -23,14 +25,34 @@ export default function Api() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to the link api!
+          Are you sure you want to visit this url?
         </h1>
 
         <p className={styles.description}>
-          {id}
+          {ID}
+          <br />
+          {originalAddress}
         </p>
       </main>
 
     </div>
   )
+}
+
+export async function getServerSideProps(router){
+  let fetched = await fetch('http://localhost:3000/api/retrieve', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ key: "USR_", id: router.query.id })
+  });
+
+  let data = await fetched.json();
+
+  return {
+    props: {
+      data
+    }
+  }
 }
