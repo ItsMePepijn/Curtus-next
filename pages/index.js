@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 
+import NavBar from '../components/navBar'
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -9,6 +11,8 @@ export default function Home() {
         <meta name="description" content="Curtus is a link shortening solution for creating your short links, made EASY and SAFE!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <NavBar />
 
       <main className={styles.main}>
         <h1 className={styles.title}>
