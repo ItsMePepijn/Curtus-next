@@ -6,13 +6,13 @@ import Error404 from './404'
 import styles from '../styles/Home.module.scss'
 
 export default function Api({data}) {
-  const router = useRouter()
-  const { id } = router.query
+  // const router = useRouter()
+  // const { id } = router.query
   
-  const re = /[A-Z]{5}/
-  if(!re.test(id)) return <Error404 />
+  // const re = /[A-Z]{5}/
+  // if(!re.test(id)) return <Error404 />
 
-  if(!data.ID) return <Error404 />
+  // if(!data.ID) return <Error404 />
   const { ID , originalAddress } = data;  
 
   return(
