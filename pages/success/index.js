@@ -9,5 +9,11 @@ export default function Redirect(){
 
   const re = /[A-Z]{5}/
   if(!re.test(id)) return <Error404 />
+  return(
+    <div>
+      <NavBar />
+      <p>{id}</p>
+    </div>
+  )
 
 }
