@@ -5,7 +5,7 @@ import NavBar from '../../components/navBar'
 
 import styles from '../../styles/Home.module.scss'
 
-export default function page() {
+export default function Page() {
   const router = useRouter();
 
   const handleSubmission = async (e) => {
