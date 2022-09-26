@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  env: {
+    ADMIN_KEY: process.env.ADMIN_KEY,
+  },
   async rewrites() {
     return [
       {

@@ -33,6 +33,24 @@ export default async function handler(req, res) {
     }
 
   }
+  else if(key === process.env.ADMIN_KEY){
+    const ID = generateId(5);
+
+    try{
+      let { db } = await connectToDatabase();
+      await db.collection("urls").insertOne({
+        _id: ID,
+        generatedBy: key,
+        url: url
+      })
+      
+      return res.status(201).json({ ID: ID, generatedLink: `https://curtus.tech/${ID}`, originalAddress: url});
+
+    } 
+    catch(e){
+      return res.status(500).json({ error: "Internal server error"});
+    }
+  }
 
   else return res.status(401).json({ error: "Invalid API key" });
 }

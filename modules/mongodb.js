@@ -40,7 +40,7 @@ export async function connectToDatabase() {
   // set cache
   cachedClient = client;
   cachedDb = db;
-
+  
   return {
       client: cachedClient,
       db: cachedDb,
