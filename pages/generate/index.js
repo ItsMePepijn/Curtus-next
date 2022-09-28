@@ -52,7 +52,7 @@ export default function Page() {
           <form onSubmit={handleSubmission} method='post'>
             <input className={styles.input} id="url" type="text" placeholder="URL"/>
             <br></br>
-            <input className={styles.submit} type="submit" value="Submit"/>
+            <input className={styles.button} type="submit" value="Submit"/>
           </form>
         </div>
 
