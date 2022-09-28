@@ -42,7 +42,11 @@
   text-align: center;
 }
 
-.submit{
+.text{
+  font-size: 1.4rem;
+}
+
+.button{
   font-size: 26px;
   background: linear-gradient(160deg, rgb(248, 171, 56) 0%, rgba(228,101,10,1) 50%, rgba(255,23,23,1) 100%);
   padding: 10px;
@@ -55,8 +59,15 @@
   &:hover{
     cursor: pointer;
     background: linear-gradient(160deg, rgb(173, 119, 39) 0%, rgba(159,70,7,1) 50%, rgba(178,16,16,1) 100%);
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
+}
+
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
 .input{
