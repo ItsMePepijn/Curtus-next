@@ -25,7 +25,7 @@ export default function Home() {
           <br></br>
           <br></br>
 
-          <Link href={"/generate"}><a className={styles.submit}>Get Started</a></Link>
+          <Link href={"/generate"}><a className={styles.button}>Get Started</a></Link>
         </div>
       </main>
     </div>
