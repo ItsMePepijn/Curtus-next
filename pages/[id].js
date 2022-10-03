@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 import Error404 from './404'
 
@@ -27,17 +28,17 @@ export default function Api({data}) {
       <NavBar />
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Are you sure you want to visit this url?
-        </h1>
+        <div className={styles.box}>
+          <h1 className={styles.subTitle}>
+            Are you sure you want to visit this url?
+          </h1>
+          <p className={styles.text}>{originalAddress}</p>
+          
+          <div className={styles.buttons}>
+            <Link href={"/generate"}><a className={styles.button}>Yes, I am sure</a></Link>
+          </div>
+        </div>
 
-        <p className={styles.description}>
-          {originalAddress}
-        </p>
-
-        <a href={originalAddress}>
-          <h2>Yes, I am sure &rarr;</h2>
-        </a>
       </main>
 
     </div>
