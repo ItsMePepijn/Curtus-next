@@ -16,7 +16,7 @@ export default function NavBar(){
         <Link href={"/apiInfo"}><a>API</a></Link>
       </div>
 
-      <Link href={""}><a className={styles.navBarLogin}>Login</a></Link>
+      <Link href={"/login"}><a className={styles.navBarLogin}>Login</a></Link>
     </nav>
   )
 }
