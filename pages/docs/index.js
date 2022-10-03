@@ -14,9 +14,13 @@ export default function Api() {
       <NavBar />
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to the link api docs!
-        </h1>
+        <div className={styles.box}>
+          <h1 className={styles.subTitle}>
+            Welcome to the api docs!
+          </h1>
+          
+        </div>
+
       </main>
 
     </div>

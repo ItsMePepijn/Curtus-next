@@ -15,13 +15,14 @@ export default function Api() {
       <NavBar />
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to the link api!
-        </h1>
+        <div className={styles.box}>
+          <h1 className={styles.subTitle}>
+            Welcome to the api!
+          </h1>
+          <p className={styles.text}>Get started by reading <Link href={"/docs"}><a>/docs</a></Link></p>
+          
+        </div>
 
-        <p className={styles.description}>
-          Get started by reading <Link href={"/docs"}><a>/docs</a></Link>
-        </p>
       </main>
 
     </div>
