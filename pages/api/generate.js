@@ -7,10 +7,12 @@ export default async function handler(req, res) {
 
   if(req.method !== "POST") return res.status(405).json({ error: "Method not allowed, POST must be used for this endpoint", usedMethod: req.method });
 
-  const { key, url } = req.body;
+  var { key, url } = req.body;
 
   if(!key) return res.status(400).json({ error: "Missing API key"});
   if(!url) return res.status(400).json({ error: "Missing URL"});
+
+  if(!url.startsWith("http://") || !url.startsWith("https://")) url = "https://" + url;
 
   if(key.startsWith("USR_")){
     const ID = generateId(5);
