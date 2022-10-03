@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import {useRouter} from 'next/router';
 
+import React from 'react';
+
 import NavBar from '../../components/navBar'
 
 import styles from '../../styles/Home.module.scss'
@@ -32,6 +34,19 @@ export default function Page() {
     if(result.ID) return router.push(`/success?id=${result.ID}`);
   }
 
+  const input = React.createRef();
+  const span = React.createRef();
+
+  const focus = () => {
+    input.current.classList.add(styles.inputFocussed);
+    span.current.classList.add(styles.httpsFocussed);
+  }
+
+  const unFocus = () => {
+    input.current.classList.remove(styles.inputFocussed);
+    span.current.classList.remove(styles.httpsFocussed);
+  }
+
   return(
     <div className={styles.container}>
       <Head>
@@ -49,9 +64,15 @@ export default function Page() {
             Generate your short link!
           </h1>
         
-          <form onSubmit={handleSubmission} method='post'>
-            <input className={styles.input} id="url" type="text" placeholder="URL"/>
+          <form onSubmit={handleSubmission} method='post' className={styles.form}>
+
+            <div className={styles.inputContainer} id="inputContainer">
+              <span className={styles.https} ref={span} id="https">https://</span>
+              <input className={styles.input} ref={input} onFocus={focus} onBlur={unFocus} id="url" type="text" placeholder="URL"/>
+            </div>
+
             <br></br>
+
             <input className={styles.button} type="submit" value="Submit"/>
           </form>
         </div>
