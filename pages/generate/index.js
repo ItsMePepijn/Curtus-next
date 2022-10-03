@@ -66,9 +66,13 @@ export default function Page() {
         
           <form onSubmit={handleSubmission} method='post' className={styles.form}>
 
-            <div className={styles.inputContainer} id="inputContainer">
-              <span className={styles.https} ref={span} id="https">https://</span>
-              <input className={styles.input} ref={input} onFocus={focus} onBlur={unFocus} id="url" type="text" placeholder="URL"/>
+            <div className={styles.inputContainer}>
+              <div className={styles.inputShadow}>
+
+                <span className={styles.https} ref={span} id="https">https://</span>
+                <input className={styles.input} ref={input} onFocus={focus} onBlur={unFocus} id="url" type="text" placeholder="URL"/>
+                
+              </div>
             </div>
 
             <br></br>

@@ -75,8 +75,9 @@
   justify-content: center;
   margin-top: 30px;
 
-  & > * {
+  & > * > * {
     transition: all 300ms ease-in-out;
+
   }
 }
 .input{
@@ -88,6 +89,13 @@
   &Focussed {
     outline: none;
     border: 3px solid orange;
+  }
+
+  &Shadow {
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
   }
 }
 
