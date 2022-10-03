@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import {useRouter} from 'next/router';
-
 import React from 'react';
+
+import validateUrl from '../../modules/validateUrl';
 
 import NavBar from '../../components/navBar'
 
@@ -17,6 +18,10 @@ export default function Page() {
       key: process.env.ADMIN_KEY,
       url: document.getElementById("url").value
     }
+
+    if(!validateUrl(data.url)) return alert("Provided URL is invalid!")
+
+
     const JSONdata = JSON.stringify(data);
 
     let dev = process.env.NODE_ENV !== 'production'
@@ -38,13 +43,32 @@ export default function Page() {
   const span = React.createRef();
 
   const focus = () => {
-    input.current.classList.add(styles.inputFocussed);
-    span.current.classList.add(styles.httpsFocussed);
+    if(input.current.value === ""){
+      input.current.classList.add(styles.inputFocussed);
+      span.current.classList.add(styles.httpsFocussed);
+    }
   }
 
-  const unFocus = () => {
-    input.current.classList.remove(styles.inputFocussed);
-    span.current.classList.remove(styles.httpsFocussed);
+  const checkState = () => {
+    input.current.className = styles.input;
+    span.current.className = styles.https;
+    
+    if(input.current.value === "") return;
+
+    if(!validateUrl(input.current.value)) {
+      input.current.className = styles.input;
+      span.current.className = styles.https;
+
+      input.current.classList.add(styles.inputFocussedFalse);
+      span.current.classList.add(styles.httpsFocussedFalse);
+    }
+    else{
+      input.current.className = styles.input;
+      span.current.className = styles.https;
+
+      input.current.classList.add(styles.inputFocussedTrue);
+      span.current.classList.add(styles.httpsFocussedTrue);
+    }
   }
 
   return(
@@ -69,9 +93,9 @@ export default function Page() {
             <div className={styles.inputContainer}>
               <div className={styles.inputShadow}>
 
-                <span className={styles.https} ref={span} id="https">https://</span>
-                <input className={styles.input} ref={input} onFocus={focus} onBlur={unFocus} id="url" type="text" placeholder="URL"/>
-                
+                <span className={styles.https} ref={span} >https://</span>
+                <input className={styles.input} ref={input} onFocus={focus} onBlur={checkState} onKeyUp={checkState} id="url" type="text" placeholder="URL"/>
+
               </div>
             </div>
 

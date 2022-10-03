@@ -85,10 +85,17 @@
   border-radius: 0 5px 5px 0;
   padding: 10px;
   font-size: 17px;
+  outline: none;
 
   &Focussed {
-    outline: none;
-    border: 3px solid orange;
+    border: 3px solid #ffa500;
+
+    &False{
+      border: 3px solid #ff0000;
+    }
+    &True{
+      border: 3px solid #1ec434;
+    }
   }
 
   &Shadow {
@@ -108,8 +115,17 @@
 
   &Focussed {
     outline: none;
-    border: 3px solid orange;
+    border: 3px solid #ffa500;
     border-right: 0;
+    
+    &False{
+      border: 3px solid #ff0000;
+      border-right: 0;
+    }
+    &True{
+      border: 3px solid #1ec434;
+      border-right: 0;
+    }
   }
 }
 
