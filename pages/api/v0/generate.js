@@ -1,7 +1,7 @@
 
-import generateId from "../../modules/generateId"
+import generateId from "../../../modules/generateId"
 
-const { connectToDatabase } = require('../../modules/mongodb');
+const { connectToDatabase } = require('../../../modules/mongodb');
 
 export default async function handler(req, res) {
 

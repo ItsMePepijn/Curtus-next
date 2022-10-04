@@ -4,6 +4,7 @@ const nextConfig = {
   swcMinify: true,
   env: {
     ADMIN_KEY: process.env.ADMIN_KEY,
+    PRODUCTION_API_VERSION: process.env.PRODUCTION_API_VERSION,
   },
   async rewrites() {
     return [

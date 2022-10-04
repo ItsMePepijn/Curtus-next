@@ -1,5 +1,5 @@
 
-const { connectToDatabase } = require('../../modules/mongodb');
+const { connectToDatabase } = require('../../../modules/mongodb');
 
 export default async function handler(req, res) {
 

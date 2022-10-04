@@ -47,7 +47,7 @@ export default function Api({data}) {
 
 export async function getServerSideProps(router){
   let dev = process.env.NODE_ENV !== 'production'
-  let fetched = await fetch(`${(dev ? "http://localhost:3000" : "https://curtus.tech")}/api/retrieve?id=${router.query.id}`, {method: 'GET' });
+  let fetched = await fetch(`${(dev ? "http://localhost:3000" : "https://curtus.tech")}/api/${apiVersion}/retrieve?id=${router.query.id}`, {method: 'GET' });
 
   let data = await fetched.json();
 
