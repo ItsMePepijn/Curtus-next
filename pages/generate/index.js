@@ -6,7 +6,6 @@ import validateUrl from '../../modules/validateUrl';
 
 import NavBar from '../../components/navBar'
 
-import styles from '../../styles/Home.module.scss'
 import form from '../../styles/Form.module.scss'
 
 export default function Page() {
@@ -21,7 +20,6 @@ export default function Page() {
     }
 
     if(!validateUrl(data.url)) return alert("Provided URL is invalid!")
-
 
     const JSONdata = JSON.stringify(data);
 
@@ -44,7 +42,7 @@ export default function Page() {
   const span = React.createRef();
 
   const focus = () => {
-    if(input.current.value === ""){
+    if(input.current.value == ""){
       input.current.classList.add(form.inputFocussed);
       span.current.classList.add(form.httpsFocussed);
     }
@@ -54,7 +52,7 @@ export default function Page() {
     input.current.className = form.input;
     span.current.className = form.https;
     
-    if(input.current.value === "") return;
+    if(input.current.value == "") return;
 
     if(!validateUrl(input.current.value)) {
       input.current.className = form.input;

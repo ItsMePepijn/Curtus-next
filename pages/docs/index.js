@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import NavBar from '../../components/navBar'
-import styles from '../../styles/Home.module.scss'
 
 export default function Api() {
   return(

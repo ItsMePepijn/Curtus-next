@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import NavBar from '../../components/navBar'
-import styles from '../../styles/Home.module.scss'
 
 export default function Api() {
   return(
@@ -19,6 +18,7 @@ export default function Api() {
           <h1 className="subTitle">
             Welcome to the api!
           </h1>
+
           <p className="text">Get started by reading <Link href={"/docs"}><a>/docs</a></Link></p>
           
         </div>

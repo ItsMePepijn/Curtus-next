@@ -4,8 +4,6 @@ import Head from "next/head"
 import NavBar from "../../components/navBar"
 import Error404 from "../404"
 
-import styles from "../../styles/Home.module.scss"
-
 export default function Redirect(){
   const router = useRouter()
   const { id } = router.query
@@ -35,9 +33,7 @@ export default function Redirect(){
           
           <div className="buttons">
             <a href={id} className="button">Bring me there</a>
-            <a className="button" onClick={copyToClipboard}>
-              Copy
-            </a>
+            <a className="button" onClick={copyToClipboard}>Copy</a>
           </div>
         </div>
 
