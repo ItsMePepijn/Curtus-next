@@ -35,7 +35,7 @@ export default function Api({data}) {
           <p className={styles.text}>{originalAddress}</p>
           
           <div className={styles.buttons}>
-            <Link href={"/generate"}><a className={styles.button}>Yes, I am sure</a></Link>
+            <Link href={originalAddress}><a className={styles.button}>Yes, I am sure</a></Link>
           </div>
         </div>
 
