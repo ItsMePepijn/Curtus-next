@@ -1,0 +1,33 @@
+.sliderThumb::before {
+	position: absolute;
+	content: "";
+	left: 60%;
+	top: 42%;
+	width: 520px;
+	height: 520px;
+  background: linear-gradient(140deg, rgb(248, 171, 56) 0%, rgba(228,101,10,1) 50%, rgba(255,23,23,1) 100%);
+	border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
+	will-change: border-radius, transform, opacity;
+	animation: sliderShape 10s linear infinite;
+	display: block;
+	z-index: -1;
+	-webkit-animation: sliderShape 10s linear infinite;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+@keyframes sliderShape{
+  0%,100%{
+  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    transform: translate3d(0,0,0) rotateZ(0.01deg);
+  }
+  34%{
+      border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+    transform:  translate3d(0,5px,0) rotateZ(0.01deg);
+  }
+  50%{
+    transform: translate3d(0,0,0) rotateZ(0.01deg);
+  }
+  67%{
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;
+    transform: translate3d(0,-3px,0) rotateZ(0.01deg);
+  }
+}
