@@ -5,7 +5,7 @@ import NavBar from "../components/navBar"
 
 export default function Error404() {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>404: This page does not exist</title>
         <meta name="description" content="This page does not exist!" />

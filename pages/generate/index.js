@@ -73,7 +73,7 @@ export default function Page() {
   }
 
   return(
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Curtus | Generate</title>
         <meta name="description" content="THE link shortening solution for creating your short links made easy and safe!" />

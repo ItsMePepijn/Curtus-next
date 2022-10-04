@@ -8,7 +8,7 @@ import SliderThumb from '../components/SliderThumb'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Curtus | Shortening Links Made Easy and Safe</title>
         <meta name="description" content="Curtus is a link shortening solution for creating your short links, made EASY and SAFE!" />
