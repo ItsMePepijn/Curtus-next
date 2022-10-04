@@ -7,6 +7,7 @@ import validateUrl from '../../modules/validateUrl';
 import NavBar from '../../components/navBar'
 
 import styles from '../../styles/Home.module.scss'
+import form from '../../styles/Form.module.scss'
 
 export default function Page() {
   const router = useRouter();
@@ -44,30 +45,30 @@ export default function Page() {
 
   const focus = () => {
     if(input.current.value === ""){
-      input.current.classList.add(styles.inputFocussed);
-      span.current.classList.add(styles.httpsFocussed);
+      input.current.classList.add(form.inputFocussed);
+      span.current.classList.add(form.httpsFocussed);
     }
   }
 
   const checkState = () => {
-    input.current.className = styles.input;
-    span.current.className = styles.https;
+    input.current.className = form.input;
+    span.current.className = form.https;
     
     if(input.current.value === "") return;
 
     if(!validateUrl(input.current.value)) {
-      input.current.className = styles.input;
-      span.current.className = styles.https;
+      input.current.className = form.input;
+      span.current.className = form.https;
 
-      input.current.classList.add(styles.inputFocussedFalse);
-      span.current.classList.add(styles.httpsFocussedFalse);
+      input.current.classList.add(form.inputFocussedFalse);
+      span.current.classList.add(form.httpsFocussedFalse);
     }
     else{
-      input.current.className = styles.input;
-      span.current.className = styles.https;
+      input.current.className = form.input;
+      span.current.className = form.https;
 
-      input.current.classList.add(styles.inputFocussedTrue);
-      span.current.classList.add(styles.httpsFocussedTrue);
+      input.current.classList.add(form.inputFocussedTrue);
+      span.current.classList.add(form.httpsFocussedTrue);
     }
   }
 
@@ -81,27 +82,27 @@ export default function Page() {
 
       <NavBar />
 
-      <main className={styles.main}>
+      <main className="main">
 
-        <div className={styles.box}>
-          <h1 className={styles.subTitle}>
+        <div className="box">
+          <h1 className="subTitle">
             Generate your short link!
           </h1>
         
-          <form onSubmit={handleSubmission} method='post' className={styles.form}>
+          <form onSubmit={handleSubmission} method='post'>
 
-            <div className={styles.inputContainer}>
-              <div className={styles.inputShadow}>
+            <div className={form.inputContainer}>
+              <div className={form.inputShadow}>
 
-                <span className={styles.https} ref={span} >https://</span>
-                <input className={styles.input} ref={input} onFocus={focus} onBlur={checkState} onKeyUp={checkState} id="url" type="text" placeholder="URL"/>
+                <span className={form.https} ref={span} >https://</span>
+                <input className={form.input} ref={input} onFocus={focus} onBlur={checkState} onKeyUp={checkState} id="url" type="text" placeholder="URL"/>
 
               </div>
             </div>
 
             <br></br>
 
-            <input className={styles.button} type="submit" value="Submit"/>
+            <input className="button" type="submit" value="Submit"/>
           </form>
         </div>
 

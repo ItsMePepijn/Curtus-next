@@ -1,0 +1,58 @@
+.inputContainer{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+
+  & > * > * {
+    transition: all 300ms ease-in-out;
+
+  }
+}
+.input{
+  border: 3px solid black;
+  border-radius: 0 5px 5px 0;
+  padding: 10px;
+  font-size: 17px;
+  outline: none;
+
+  &Focussed {
+    border: 3px solid #ffa500;
+
+    &False{
+      border: 3px solid #ff0000;
+    }
+    &True{
+      border: 3px solid #1ec434;
+    }
+  }
+
+  &Shadow {
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+  }
+}
+
+.https{
+  border: 3px solid black;
+  padding: 9px;
+  border-right: 0;
+  border-radius: 5px 0px 0px 5px;
+  font-size: 17px;
+
+  &Focussed {
+    outline: none;
+    border: 3px solid #ffa500;
+    border-right: 0;
+    
+    &False{
+      border: 3px solid #ff0000;
+      border-right: 0;
+    }
+    &True{
+      border: 3px solid #1ec434;
+      border-right: 0;
+    }
+  }
+}

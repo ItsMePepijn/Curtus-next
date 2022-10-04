@@ -13,9 +13,9 @@ export default function Api() {
 
       <NavBar />
 
-      <main className={styles.main}>
-        <div className={styles.box}>
-          <h1 className={styles.subTitle}>
+      <main className="main">
+        <div className="box">
+          <h1 className="subTitle">
             Welcome to the api docs!
           </h1>
           

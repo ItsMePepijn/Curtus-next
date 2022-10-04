@@ -27,15 +27,15 @@ export default function Api({data}) {
 
       <NavBar />
 
-      <main className={styles.main}>
-        <div className={styles.box}>
-          <h1 className={styles.subTitle}>
+      <main className="main">
+        <div className="box">
+          <h1 className="subTitle">
             Are you sure you want to visit this url?
           </h1>
-          <p className={styles.text}>{originalAddress}</p>
+          <p className="text">{originalAddress}</p>
           
-          <div className={styles.buttons}>
-            <Link href={originalAddress}><a className={styles.button}>Yes, I am sure</a></Link>
+          <div className="buttons">
+            <Link href={originalAddress}><a className="button">Yes, I am sure</a></Link>
           </div>
         </div>
 

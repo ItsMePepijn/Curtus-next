@@ -26,16 +26,16 @@ export default function Redirect(){
 
       <NavBar />
       
-      <main className={styles.main}>
-        <div className={styles.box}>
-          <h1 className={styles.subTitle}>
+      <main className="main">
+        <div className="box">
+          <h1 className="subTitle">
             Your short link is ready!
           </h1>
-          <p className={styles.text}>https://curtus.tech/{id}</p>
+          <p className="text">https://curtus.tech/{id}</p>
           
-          <div className={styles.buttons}>
-            <a href={id} className={styles.button}>Bring me there</a>
-            <a className={styles.button} onClick={copyToClipboard}>
+          <div className="buttons">
+            <a href={id} className="button">Bring me there</a>
+            <a className="button" onClick={copyToClipboard}>
               Copy
             </a>
           </div>
