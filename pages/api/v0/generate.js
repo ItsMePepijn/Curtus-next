@@ -13,7 +13,7 @@ export default async function handler(req, res) {
   if(!key) return res.status(errors.missingApiKey.status).json(errors.missingApiKey);
   if(!url) return res.status(errors.missingUrl.status).json(errors.missingUrl);
 
-  if(!url.startsWith("http://") || !url.startsWith("https://")) url = "https://" + url;
+  if(!url.startsWith("http://") && !url.startsWith("https://")) url = "https://" + url;
 
   if(key.startsWith("USR_")){
     const ID = generateId(5);
