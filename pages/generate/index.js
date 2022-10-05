@@ -24,7 +24,9 @@ export default function Page() {
     const JSONdata = JSON.stringify(data);
 
     let dev = process.env.NODE_ENV !== 'production'
-    let apiVersion = process.env.PRODUCTION_API_VERSION
+    const apiVersion = process.env.PRODUCTION_API_VERSION
+
+    console.log(apiVersion)
     
     const res = await fetch(`${(dev? "http://localhost:3000" : "https://curtus.tech")}/api/${apiVersion}/generate`, {
       method: "POST",
