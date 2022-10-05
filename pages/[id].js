@@ -4,7 +4,6 @@ import Link from 'next/link'
 
 import Error404 from './404'
 
-import styles from '../styles/Home.module.scss'
 import NavBar from '../components/navBar'
 
 export default function Api({data}) {
@@ -47,6 +46,8 @@ export default function Api({data}) {
 
 export async function getServerSideProps(router){
   let dev = process.env.NODE_ENV !== 'production'
+  const apiVersion = process.env.PRODUCTION_API_VERSION
+
   let fetched = await fetch(`${(dev ? "http://localhost:3000" : "https://curtus.tech")}/api/${apiVersion}/retrieve?id=${router.query.id}`, {method: 'GET' });
 
   let data = await fetched.json();
