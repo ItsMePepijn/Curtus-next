@@ -1,0 +1,6 @@
+{
+  "type": "/errors/invalid-method",
+  "title": "Method not allowed",
+  "status": 405,
+  "detail": "The method is not allowed for the requested URL."
+}

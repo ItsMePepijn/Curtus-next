@@ -1,0 +1,6 @@
+{
+  "type": "/errors/internal-server-error",
+  "title": "internal server error",
+  "status": 500,
+  "detail": "An internal server error occurred. Please try again later."
+}

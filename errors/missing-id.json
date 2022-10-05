@@ -1,0 +1,6 @@
+{
+  "type": "/errors/missing-id",
+  "title": "Missing ID",
+  "status": 400,
+  "detail": "The request must include an ID."
+}

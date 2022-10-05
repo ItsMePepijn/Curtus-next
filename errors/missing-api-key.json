@@ -1,0 +1,6 @@
+{
+  "type": "/errors/missing-api-key",
+  "title": "Missing API Key",
+  "status": 400,
+  "detail": "You must provide an API key to access this resource."
+}

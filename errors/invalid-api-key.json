@@ -1,0 +1,6 @@
+{
+  "type": "/errors/invalid-api-key",
+  "title": "Invalid API Key",
+  "status": 401,
+  "detail": "The API key you provided is invalid."
+}

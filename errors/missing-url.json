@@ -1,0 +1,6 @@
+{
+  "type": "/errors/missing-url",
+  "title": "Missing URL",
+  "status": 400,
+  "detail": "The request must include an URL."
+}

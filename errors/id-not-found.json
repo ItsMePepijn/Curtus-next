@@ -1,0 +1,6 @@
+{
+  "type": "/errors/id-not-found",
+  "title": "Id not found",
+  "status": 404,
+  "detail": "The id was not found"
+}

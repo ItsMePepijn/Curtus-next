@@ -1,16 +1,17 @@
 
 import generateId from "../../../modules/generateId"
+import * as errors from "../../../errors/index";
 
 const { connectToDatabase } = require('../../../modules/mongodb');
 
 export default async function handler(req, res) {
 
-  if(req.method !== "POST") return res.status(405).json({ error: "Method not allowed, POST must be used for this endpoint", usedMethod: req.method });
+  if(req.method !== "POST") return res.status(errors.invalidMethod.status).json(errors.invalidMethod);
 
   var { key, url } = req.body;
 
-  if(!key) return res.status(400).json({ error: "Missing API key"});
-  if(!url) return res.status(400).json({ error: "Missing URL"});
+  if(!key) return res.status(errors.missingApiKey.status).json(errors.missingApiKey);
+  if(!url) return res.status(errors.missingUrl.status).json(errors.missingUrl);
 
   if(!url.startsWith("http://") || !url.startsWith("https://")) url = "https://" + url;
 
@@ -31,7 +32,7 @@ export default async function handler(req, res) {
 
     } 
     catch(e){
-      return res.status(500).json({ error: "Internal server error" });
+      return res.status(errors.internalServerError.status).json(errors.internalServerError);
     }
 
   }
@@ -50,9 +51,9 @@ export default async function handler(req, res) {
 
     } 
     catch(e){
-      return res.status(500).json({ error: "Internal server error"});
+      return res.status(errors.internalServerError.status).json(errors.internalServerError);
     }
   }
 
-  else return res.status(401).json({ error: "Invalid API key" });
+  else return res.status(errors.invalidApiKey.status).json(errors.invalidApiKey);
 }
