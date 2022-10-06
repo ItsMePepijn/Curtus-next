@@ -3,7 +3,6 @@ import Link from 'next/link'
 
 import styles from '../styles/Home.module.scss'
 
-import NavBar from '../components/navBar'
 import SliderThumb from '../components/SliderThumb'
 
 export default function Home() {
@@ -15,7 +14,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <NavBar />
       <SliderThumb />
 
       <main className="main">

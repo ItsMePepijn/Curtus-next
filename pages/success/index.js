@@ -1,7 +1,6 @@
 import { useRouter } from "next/router"
 import Head from "next/head"
 
-import NavBar from "../../components/navBar"
 import Error404 from "../404"
 
 export default function Redirect(){
@@ -21,8 +20,6 @@ export default function Redirect(){
         <meta name="description" content="THE link shortening solution for creating your short links made easy and safe!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <NavBar />
       
       <main className="main">
         <div className="box">

@@ -4,8 +4,6 @@ import Link from 'next/link'
 
 import Error404 from './404'
 
-import NavBar from '../components/navBar'
-
 export default function Api({data}) {
   const router = useRouter()
   const { id } = router.query
@@ -23,8 +21,6 @@ export default function Api({data}) {
         <meta name="description" content="Curtus is a link shortening solution for creating your short links, made EASY and SAFE!"/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <NavBar />
 
       <main className="main">
         <div className="box">

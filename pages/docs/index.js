@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import NavBar from '../../components/navBar'
 
 export default function Api() {
   return(
@@ -9,8 +8,6 @@ export default function Api() {
         <meta name="description" content="THE link shortening solution for creating your short links made easy and safe!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <NavBar />
 
       <main className="main">
         <div className="box">

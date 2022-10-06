@@ -4,8 +4,6 @@ import React from 'react';
 
 import validateUrl from '../../modules/validateUrl';
 
-import NavBar from '../../components/navBar'
-
 import form from '../../styles/Form.module.scss'
 
 export default function Page() {
@@ -88,8 +86,6 @@ export default function Page() {
         <meta name="description" content="THE link shortening solution for creating your short links made easy and safe!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <NavBar />
 
       <main className="main">
 

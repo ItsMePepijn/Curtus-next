@@ -25,7 +25,7 @@ export default function NavBar(){
               key={route}
               name={name}
               route={route.toLowerCase() == "apiinfo" ? "api" : route.toLowerCase()}
-              cls = {router.pathname.toLowerCase() === `/${route.toLowerCase()}` ? styles.navBarLinksActive : styles.navBarLinks}
+              cls = {router.pathname.toLowerCase() === `/${route.toLowerCase()}` ? styles.navBarLinksItemActive : styles.navBarLinksItem}
             />
           )
 
