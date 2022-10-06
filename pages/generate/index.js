@@ -23,7 +23,7 @@ export default function Page() {
     }
 
     if(!validateUrl(data.url)){
-      await inputContainer.current.classList.add(form.inputShadowError);
+      inputContainer.current.classList.add(form.inputShadowError);
       input.current.classList.add(form.inputFocussedFalse);
       span.current.classList.add(form.httpsFocussedFalse);
       setTimeout(() => {
