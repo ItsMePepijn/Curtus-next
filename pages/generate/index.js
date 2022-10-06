@@ -10,6 +10,9 @@ import form from '../../styles/Form.module.scss'
 
 export default function Page() {
   const router = useRouter();
+  const inputContainer = React.createRef();
+  const input = React.createRef();
+  const span = React.createRef();
 
   const handleSubmission = async (e) => {
     e.preventDefault();
@@ -19,7 +22,17 @@ export default function Page() {
       url: document.getElementById("url").value
     }
 
-    if(!validateUrl(data.url)) return alert("Provided URL is invalid!")
+    if(!validateUrl(data.url)){
+      await inputContainer.current.classList.add(form.inputShadowError);
+      input.current.classList.add(form.inputFocussedFalse);
+      span.current.classList.add(form.httpsFocussedFalse);
+      setTimeout(() => {
+        inputContainer.current.classList.remove(form.inputShadowError);
+        input.current.classList.remove(form.inputFocussedFalse);
+        span.current.classList.remove(form.httpsFocussedFalse); 
+      }, 300);
+      return;
+    }
 
     const JSONdata = JSON.stringify(data);
 
@@ -38,9 +51,6 @@ export default function Page() {
     if(result.title) return alert(result.title);
     if(result.ID) return router.push(`/success?id=${result.ID}`);
   }
-
-  const input = React.createRef();
-  const span = React.createRef();
 
   const focus = () => {
     if(input.current.value == ""){
@@ -91,7 +101,7 @@ export default function Page() {
           <form onSubmit={handleSubmission} method='post'>
 
             <div className={form.inputContainer}>
-              <div className={form.inputShadow}>
+              <div className={form.inputShadow} ref={inputContainer}>
 
                 <span className={form.https} ref={span} >https://</span>
                 <input className={form.input} ref={input} onFocus={focus} onBlur={checkState} onKeyUp={checkState} id="url" type="text" placeholder="URL"/>
