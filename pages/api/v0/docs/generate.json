@@ -1,0 +1,38 @@
+{
+  "name": "Generate",
+  "description": "Generate a short URL",
+  "method": "POST",
+  "keyNeeded": true,
+
+  "inputs": [
+    {
+      "name": "url",
+      "description": "The URL to shorten",
+      "example": "https://www.google.com",
+      "required": true
+    }
+  ],
+
+  "output": [
+    {
+      "name": "ID",
+      "description": "The ID of the shortened URL",
+      "example": "AHDAK"
+    },
+    {
+      "name": "type",
+      "description": "The type of the user",
+      "example": "Anonymous user"
+    },
+    {
+      "name": "generatedLink",
+      "description": "The shortened URL",
+      "example": "https://curtus.tech/AHDAK"
+    },
+    {
+      "name": "originalAddress",
+      "description": "The original URL",
+      "example": "https://www.google.com"
+    }
+  ]
+}
