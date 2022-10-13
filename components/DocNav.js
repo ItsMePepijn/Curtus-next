@@ -14,7 +14,7 @@ export default function DocNav({ver, endpoints, className}) {
           key={endpoint}
           endpoint={endpoint}
           ver={ver}
-          cls={router.pathname.toLowerCase() == `/docs/${ver}/${endpoint}` ? styles.titleActive : styles.title}
+          cls={router.query.id == endpoint ? styles.titleActive : styles.title}
         />
       ))}
     </div>
