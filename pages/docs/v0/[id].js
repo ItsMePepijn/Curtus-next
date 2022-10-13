@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 
 import Error404 from '../../404'
 import DocNav from '../../../components/DocNav'
@@ -11,12 +10,17 @@ import * as docs from '../../api/v0/docs/index'
 import fs from 'fs'
 
 export default function Api({data}) {
-  const router = useRouter();
-  const { id } = router.query
   
   if(!data.dirExists) return <Error404 />
 
   var endpoints = Object.keys(docs);
+  const info = data.info
+
+  function methodStyle(method){
+    if(method == "GET") return styles.methodGet;
+    if(method == "POST") return styles.methodPost;
+    if(method == "DELETE") return styles.methodDelete;
+  }
 
   return(
     <div>
@@ -30,9 +34,15 @@ export default function Api({data}) {
         <div className={styles.boxWide}>
           <DocNav ver="v0" endpoints={endpoints} className={styles.left}/>
           <div className={styles.right}>
-            <h1 className="subTitle">
-              Welcome to the v0 api docs!
-            </h1>
+            <div className={styles.titleContainer}>
+              <h1 className="subTitle">
+                {info.name}
+              </h1>
+              <span className={[styles.method, methodStyle(info.method)].join(" ")}>{info.method}</span>
+            </div>
+            <p>
+              {info.description}
+            </p>
           </div>
           
         </div>
@@ -45,10 +55,13 @@ export default function Api({data}) {
 export function getServerSideProps(router){
   const dirExists = fs.existsSync(`./pages/api/v0/docs/${router.query.id}.json`)
 
+  const info = require(`../../api/v0/docs/${router.query.id}.json`)
+
   return {
     props: {
       data: {
-        dirExists
+        dirExists,
+        info
       }
     }
   }
