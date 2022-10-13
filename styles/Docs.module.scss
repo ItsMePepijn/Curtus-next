@@ -14,6 +14,37 @@
   text-align: left;
 }
 
+.titleContainer{
+  display: flex;
+}
+
+.method{
+  font-size: 18px;
+  font-weight: bold;
+
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 20px;
+  margin-top: 9px;
+  height: fit-content;
+
+  &Post{
+    color: #2bbe2b;
+    background-color: #2bbe2b27;
+    border: #2bbe2b solid 2px;
+  }
+  &Get{
+    color: #2b9bbe;
+    background-color: #2b9bbe27;
+    border: #2b9bbe solid 2px;
+  }
+  &Delete{
+    color: #f84747;
+    background-color: #f8474727;
+    border: #f84747 solid 2px;
+  }
+}
+
 .left{
   width: 20%;
   padding: 10px;
