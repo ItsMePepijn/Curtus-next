@@ -18,6 +18,15 @@ const nextConfig = {
       }
     ]
   },
+  async redirects() {
+    return [
+      {
+        source: '/docs',
+        destination: '/docs/v0',
+        permanent: true,
+      }
+    ]
+  }
 }
 
 module.exports = nextConfig
