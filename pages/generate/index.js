@@ -3,6 +3,9 @@ import {useRouter} from 'next/router';
 import React from 'react';
 
 import validateUrl from '../../modules/validateUrl';
+import * as cookie from '../../modules/cookies'
+
+import Settings from '../../components/RedirectSettings';
 
 import form from '../../styles/Form.module.scss'
 
@@ -111,8 +114,10 @@ export default function Page() {
           </form>
         </div>
 
-
       </main>
+
+      <Settings data={cookie.get("redirectSettings")}/>
+
     </div>
   )
 }

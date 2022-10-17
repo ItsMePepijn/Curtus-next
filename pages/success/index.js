@@ -2,6 +2,9 @@ import { useRouter } from "next/router"
 import Head from "next/head"
 
 import Error404 from "../404"
+import Settings from "../../components/RedirectSettings"
+import * as cookie from '../../modules/cookies'
+
 
 export default function Redirect(){
   const router = useRouter()
@@ -35,6 +38,8 @@ export default function Redirect(){
         </div>
 
       </main>
+
+      <Settings data={cookie.get("redirectSettings")}/>
     </div>
   )
 
