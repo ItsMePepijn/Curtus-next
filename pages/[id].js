@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { useEffect } from 'react'
 import { setCookie, getCookie, hasCookie } from 'cookies-next'
 
 import Error404 from './404'
@@ -18,16 +17,18 @@ export default function Api({data}) {
   if(!data.ID) return <Error404 />
   const { originalAddress } = data;
 
-  let cookies
+  let cookies = new cookie.Settings();
 
-  if(hasCookie("redirectSettings")){
-    cookies = JSON.parse(getCookie("redirectSettings"));
-  }else{
-    cookies = new cookie.Settings();
-    setCookie("redirectSettings", cookies, cookies.rules());
+  if(typeof window !== 'undefined'){
+    if(hasCookie("redirectSettings")){
+      cookies = JSON.parse(getCookie("redirectSettings"));
+      console.log("Found cookies")
+    }else{
+      setCookie("redirectSettings", cookies, cookies.rules());
+      console.log("Created cookies")
+    }
+    console.log(cookies)
   }
-
-  console.log(cookies)
 
   return(
     <div>
@@ -51,7 +52,7 @@ export default function Api({data}) {
 
       </main>
 
-      <Settings isEnabledData={cookies.isEnabled} isDelayedData={cookies.isDelayed} delayTimeData={cookies.delayTime}/>
+      <Settings data={cookies}/>
     </div>
   )
 }
