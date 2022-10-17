@@ -22,6 +22,13 @@ export default function Api() {
             <h1 className="subTitle">
               Welcome to the v0 api docs!
             </h1>
+
+            <p>
+              You found the Curtus Developer Documentation! Here you can find everything about intergrating Curtus into your projects.
+            </p>
+
+            <h2></h2>
+    
           </div>
           
         </div>

@@ -40,9 +40,6 @@ export default function Api({data}) {
               </h1>
               <span className={[styles.method, methodStyle(info.method)].join(" ")}>{info.method}</span>
             </div>
-            <p>
-              {info.description}
-            </p>
           </div>
           
         </div>
