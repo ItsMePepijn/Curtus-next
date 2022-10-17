@@ -2,6 +2,8 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
+import { getCookie, hasCookie } from 'cookies-next'
+
 import Error404 from './404'
 import Settings from '../components/RedirectSettings'
 import * as cookie from '../modules/cookies'
@@ -15,6 +17,19 @@ export default function Api({data}) {
 
   if(!data.ID) return <Error404 />
   const { originalAddress } = data;
+
+  if(typeof window !== 'undefined'){
+    if(hasCookie("redirectSettings")){
+      if(JSON.parse(getCookie("redirectSettings")).isEnabled){
+        if(JSON.parse(getCookie("redirectSettings")).isDelayed){
+          setTimeout(() => {
+            return window.location.href = originalAddress;
+          }, JSON.parse(getCookie("redirectSettings")).delayTime * 1000);
+        }
+        else return window.location.href = originalAddress;
+      }
+    }
+  }
 
   return(
     <div>
