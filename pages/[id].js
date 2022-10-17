@@ -22,12 +22,9 @@ export default function Api({data}) {
   if(typeof window !== 'undefined'){
     if(hasCookie("redirectSettings")){
       cookies = JSON.parse(getCookie("redirectSettings"));
-      console.log("Found cookies")
     }else{
       setCookie("redirectSettings", cookies, cookies.rules());
-      console.log("Created cookies")
     }
-    console.log(cookies)
   }
 
   return(
