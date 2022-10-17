@@ -65,9 +65,9 @@ export default function Settings({data}){
             <tr>
               <td className={styles.label}>Redirect delay</td>
               <td>
-                <label>
+                <label className={styles.num}>
                   <input type="number" value={delayTime} onChange={changeDelayTime}/>
-                  <span></span>
+                  <span>Secs</span>
                 </label>
               </td>
             </tr>

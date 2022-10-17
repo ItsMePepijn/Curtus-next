@@ -10,6 +10,25 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.num{
+  display: flex;
+
+  & > *{
+    border: 3px solid black;
+    padding: 5px;
+    font-size: 20px;
+  }
+  & > input{
+    width: 70px;
+    outline: none;
+    border-radius: 5px 0 0 5px;
+  }
+  & > span{
+    border-left: 0;
+    border-radius: 0 5px 5px 0;
+  }
+}
+
 .switch {
   position: relative;
   display: inline-block;
