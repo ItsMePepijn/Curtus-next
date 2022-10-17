@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { setCookie, getCookie, hasCookie } from 'cookies-next'
 
 import Error404 from './404'
 import Settings from '../components/RedirectSettings'
@@ -16,16 +15,6 @@ export default function Api({data}) {
 
   if(!data.ID) return <Error404 />
   const { originalAddress } = data;
-
-  let cookies = new cookie.Settings();
-
-  if(typeof window !== 'undefined'){
-    if(hasCookie("redirectSettings")){
-      cookies = JSON.parse(getCookie("redirectSettings"));
-    }else{
-      setCookie("redirectSettings", cookies, cookies.rules());
-    }
-  }
 
   return(
     <div>
@@ -49,11 +38,11 @@ export default function Api({data}) {
 
       </main>
 
-      <Settings data={cookies}/>
+      <Settings data={cookie.get("redirectSettings")}/>
     </div>
   )
 }
-
+ 
 export async function getServerSideProps(router){
   let dev = process.env.NODE_ENV !== 'production'
   const apiVersion = process.env.PRODUCTION_API_VERSION
