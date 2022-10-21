@@ -37,31 +37,23 @@ export default function Settings({user}){
     console.log(JSON.parse(getCookie("redirectSettings")));
   }
 
-  let cls
-  let rowHidden
-  let rowHidden2
+  function toggleMenuClass() {
+    setMenuHidden(((menuHidden == "") ? styles.menuHidden : ""));
+  }
 
-  if(!isEnabled){
-    cls = styles.settingsContainer + " " + styles.settingsContainerHidden
-    rowHidden = styles.rowHidden
-    rowHidden2 = styles.rowHidden
-  }
-  else if(!isDelayed){
-    cls = styles.settingsContainer + " " + styles.settingsContainerHidden2
-    rowHidden = ""
-    rowHidden2 = styles.rowHidden
-  }
-  else{
-    cls = styles.settingsContainer
-    rowHidden = ""
-    rowHidden2 = ""
-  }
+  let [menuHidden, setMenuHidden] = useState("");
 
   return(
-    <div className={cls}>
+    <div className={styles.menu+" "+styles.settingsContainer+" "+menuHidden}>
       <form onSubmit={(e) => {e.preventDefault()}}>
         <table>
-          <tbody className={styles.tableBody}>
+          <tbody>
+            <tr>
+              <td className={styles.settings}>
+                <img src="settings.svg"></img>
+                <input type="button" onClick={toggleMenuClass} value="User Settings"></input>
+              </td>
+            </tr>
             <tr>
               <td className={styles.label}>Disable redirect confirmation</td>
               <td>
@@ -72,7 +64,7 @@ export default function Settings({user}){
               </td>
             </tr>
 
-            <tr className={rowHidden}>
+            <tr>
               <td className={styles.label}>Enable redirect delay</td>
               <td>
                 <label className={styles.switch}>
@@ -82,7 +74,7 @@ export default function Settings({user}){
               </td>
             </tr>
 
-            <tr className={rowHidden2}>
+            <tr>
               <td className={styles.label}>Redirect delay</td>
               <td>
                 <label className={styles.num}>
