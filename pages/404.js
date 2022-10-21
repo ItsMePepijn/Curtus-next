@@ -1,4 +1,5 @@
 import Head from "next/head"
+import Link from "next/link"
 
 export default function Error404() {
   return (
@@ -9,7 +10,18 @@ export default function Error404() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      <h1>404 - Page Not Found</h1>
+      <div className="main">
+        <h1 className="title">Page Not Found</h1>
+
+        <p className="subTitle">You seem lost, are you sure you are on the right page?</p>
+
+        <p className="text">
+          Did you look for these?<br/><br/>
+          <Link href={"/"}><a className="special">Home</a></Link>
+          <br/>
+          <Link href={"/generate"}><a className="special">Generate</a></Link>
+        </p>
+      </div>
     </div>
   )
 }
