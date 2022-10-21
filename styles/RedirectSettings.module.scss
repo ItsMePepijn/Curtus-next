@@ -1,8 +1,6 @@
 
 .settingsContainer{
-  padding: 20px;
-  padding-bottom: 30px;
-  padding-top: 10px;
+  padding: 30px 20px;
 
   position: fixed;
   left: 0;
@@ -28,27 +26,17 @@
   position: fixed;
   bottom: -150px;
   transition: 300ms ease-in-out;
+
+  &Hidden{
+    bottom: 0;
+  }
 }
 
-.menuHidden{
-  bottom: 0px;
-}
-
-.settings{
-  & input {
-    color: black;
-    background: none;
-    border: none;
-    font-size: 20px;
-
-  }
-  
-  &:hover input {
-    font-size: 20px;
-  }
-  
+.openSettings{
+  padding-bottom: 10px;
+  width: fit-content;
   & img {
-    height: 22px;
+    height: 44px;
     transition: all ease-in-out 300ms;
   }
 
