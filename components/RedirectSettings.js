@@ -50,7 +50,7 @@ export default function Settings({user}){
         <form onSubmit={(e) => {e.preventDefault()}}>
           <table>
             <tbody>
-              <tr>
+              <tr className={styles.settingsContainerFirstRow}>
                 <td className={styles.label}>Disable redirect confirmation</td>
                 <td>
                   <label className={styles.switch}>
@@ -60,7 +60,7 @@ export default function Settings({user}){
                 </td>
               </tr>
 
-              <tr>
+              <tr className={styles.settingsContainerSecondRow}>
                 <td className={styles.label}>Enable redirect delay</td>
                 <td>
                   <label className={styles.switch}>
@@ -70,7 +70,7 @@ export default function Settings({user}){
                 </td>
               </tr>
 
-              <tr>
+              <tr className={styles.settingsContainerThirdRow}>
                 <td className={styles.label}>Redirect delay</td>
                 <td>
                   <label className={styles.num}>
