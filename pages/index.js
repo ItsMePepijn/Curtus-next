@@ -20,7 +20,7 @@ export default function Home() {
         <div className={styles.mainContent}>
           <h1 className="title">Curtus</h1>
 
-          <h2 className="subTitle">Shortening links made <span className={styles.special}>easy</span> and <span className={styles.special}>safe</span>.</h2>
+          <h2 className="subTitle">Shortening links made <span className="special">easy</span> and <span className="special">safe</span>.</h2>
           <br></br>
           <br></br>
 

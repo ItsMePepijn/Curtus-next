@@ -14,3 +14,12 @@
 .text{
   font-size: 1.4rem;
 }
+
+.special{
+  background: linear-gradient(140deg, rgb(248, 171, 56) 0%, rgba(228,101,10,1) 50%, rgba(255,23,23,1) 100%);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 400;
+}
