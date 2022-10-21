@@ -1,7 +1,8 @@
 
 .settingsContainer{
-  padding: 40px;
+  padding: 20px;
   padding-bottom: 30px;
+  padding-top: 10px;
 
   position: fixed;
   left: 0;
@@ -9,6 +10,8 @@
 
   border-radius: 0 30px 0 0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  background: white;  
 
   transition: 300ms;
 
@@ -21,12 +24,37 @@
   }
 }
 
-.tableBody > * {
+.menu {
+  position: fixed;
+  bottom: -150px;
   transition: 300ms ease-in-out;
 }
 
-.rowHidden{
-  transform: translateY(70px);
+.menuHidden{
+  bottom: 0px;
+}
+
+.settings{
+  & input {
+    color: black;
+    background: none;
+    border: none;
+    font-size: 20px;
+
+  }
+  
+  &:hover input {
+    font-size: 20px;
+  }
+  
+  & img {
+    height: 22px;
+    transition: all ease-in-out 300ms;
+  }
+
+  &:hover img {
+    transform: rotate(60deg);
+  }
 }
 
 .num{
