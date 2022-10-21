@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
       <NextNProgress color="#ffa500"/>
       <NavBar />
 
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </>
   )
 }
