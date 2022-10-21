@@ -13,28 +13,22 @@
 
   transition: 300ms ease-in-out;
 
-  &Hidden{
+  &Shown{
     bottom: 0;
   }
-
-  // &Hidden{
-  //   transform: translatey(80px);
-
-  //   &2{
-  //     transform: translatey(50px);
-  //   }
-  // }
 }
 
 .openSettings{
   padding-bottom: 10px;
   width: fit-content;
-  & img {
+  transition: all ease-in-out 300ms;
+
+  &Icon {
     height: 44px;
     transition: all ease-in-out 300ms;
   }
 
-  &:hover img {
+  &:hover &Icon {
     transform: rotate(60deg);
   }
 }

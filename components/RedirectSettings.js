@@ -38,51 +38,50 @@ export default function Settings({user}){
   }
 
   function toggleMenuClass() {
-    setContainerHidden(((containerHidden == "") ? styles.settingsContainerHidden : ""));
+    setContainerHidden(((containerShown == "") ? styles.settingsContainerShown : ""));
   }
-
-  let [containerHidden, setContainerHidden] = useState("");
+  let [containerShown, setContainerHidden] = useState("");
 
   return(
-    <div className={styles.settingsContainer+" "+containerHidden}>
-      <div className={styles.openSettings}>
-        <img src="settings.svg" onClick={toggleMenuClass}></img>
+      <div className={styles.settingsContainer+" "+containerShown}>
+        <div className={styles.openSettings}>
+          <img className={styles.openSettingsIcon} src="settings.svg" onClick={toggleMenuClass}></img>
+        </div>
+        <form onSubmit={(e) => {e.preventDefault()}}>
+          <table>
+            <tbody>
+              <tr>
+                <td className={styles.label}>Disable redirect confirmation</td>
+                <td>
+                  <label className={styles.switch}>
+                    <input type="checkbox" checked={isEnabled} onChange={empty} onClick={toggleIsEnabled}/>
+                    <span className={styles.slider}></span>
+                  </label>
+                </td>
+              </tr>
+
+              <tr>
+                <td className={styles.label}>Enable redirect delay</td>
+                <td>
+                  <label className={styles.switch}>
+                    <input type="checkbox" checked={isDelayed} onChange={empty} onClick={toggleIsDelayed}/>
+                    <span className={styles.slider}></span>
+                  </label>
+                </td>
+              </tr>
+
+              <tr>
+                <td className={styles.label}>Redirect delay</td>
+                <td>
+                  <label className={styles.num}>
+                    <input type="number" value={delayTime} onChange={changeDelayTime}/>
+                    <span>Secs</span>
+                  </label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
       </div>
-      <form onSubmit={(e) => {e.preventDefault()}}>
-        <table>
-          <tbody>
-            <tr>
-              <td className={styles.label}>Disable redirect confirmation</td>
-              <td>
-                <label className={styles.switch}>
-                  <input type="checkbox" checked={isEnabled} onChange={empty} onClick={toggleIsEnabled}/>
-                  <span className={styles.slider}></span>
-                </label>
-              </td>
-            </tr>
-
-            <tr>
-              <td className={styles.label}>Enable redirect delay</td>
-              <td>
-                <label className={styles.switch}>
-                  <input type="checkbox" checked={isDelayed} onChange={empty} onClick={toggleIsDelayed}/>
-                  <span className={styles.slider}></span>
-                </label>
-              </td>
-            </tr>
-
-            <tr>
-              <td className={styles.label}>Redirect delay</td>
-              <td>
-                <label className={styles.num}>
-                  <input type="number" value={delayTime} onChange={changeDelayTime}/>
-                  <span>Secs</span>
-                </label>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </form>
-    </div>
   )
 }
