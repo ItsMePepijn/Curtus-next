@@ -4,32 +4,26 @@
 
   position: fixed;
   left: 0;
-  bottom: 0;
+  bottom: -150px;
 
   border-radius: 0 30px 0 0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   background: white;  
 
-  transition: 300ms;
-
-  &Hidden{
-    transform: translatey(80px);
-
-    &2{
-      transform: translatey(50px);
-    }
-  }
-}
-
-.menu {
-  position: fixed;
-  bottom: -150px;
   transition: 300ms ease-in-out;
 
   &Hidden{
     bottom: 0;
   }
+
+  // &Hidden{
+  //   transform: translatey(80px);
+
+  //   &2{
+  //     transform: translatey(50px);
+  //   }
+  // }
 }
 
 .openSettings{

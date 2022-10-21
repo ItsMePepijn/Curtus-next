@@ -38,13 +38,13 @@ export default function Settings({user}){
   }
 
   function toggleMenuClass() {
-    setMenuHidden(((menuHidden == "") ? styles.menuHidden : ""));
+    setContainerHidden(((containerHidden == "") ? styles.settingsContainerHidden : ""));
   }
 
-  let [menuHidden, setMenuHidden] = useState("");
+  let [containerHidden, setContainerHidden] = useState("");
 
   return(
-    <div className={styles.menu+" "+styles.settingsContainer+" "+menuHidden}>
+    <div className={styles.settingsContainer+" "+containerHidden}>
       <div className={styles.openSettings}>
         <img src="settings.svg" onClick={toggleMenuClass}></img>
       </div>
