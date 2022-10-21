@@ -18,19 +18,18 @@ export default function Api({data}) {
   if(!data.ID) return <Error404 />
   const { originalAddress } = data;
 
-  if(typeof window !== 'undefined'){
-    if(hasCookie("redirectSettings")){
-      if(JSON.parse(getCookie("redirectSettings")).isEnabled){
-        if(JSON.parse(getCookie("redirectSettings")).isDelayed){
-          setTimeout(() => {
-            return window.location.href = originalAddress;
-          }, JSON.parse(getCookie("redirectSettings")).delayTime * 1000);
-        }
-        else return window.location.href = originalAddress;
-      }
-    }
-  }
-
+  // if(typeof window !== 'undefined'){
+  //   if(hasCookie("redirectSettings")){
+  //     if(JSON.parse(getCookie("redirectSettings")).isEnabled){
+  //       if(JSON.parse(getCookie("redirectSettings")).isDelayed){
+  //         setTimeout(() => {
+  //           return window.location.href = originalAddress;
+  //         }, JSON.parse(getCookie("redirectSettings")).delayTime * 1000);
+  //       }
+  //       else return window.location.href = originalAddress;
+  //     }
+  //   }
+  // }
   return(
     <div>
       <Head>
@@ -53,16 +52,16 @@ export default function Api({data}) {
 
       </main>
 
-      <Settings data={cookie.get("redirectSettings")}/>
+      <Settings user={cookie.get("redirectSettings")}/>
     </div>
   )
 }
  
-export async function getServerSideProps(router){
+export async function getServerSideProps({query}){
   let dev = process.env.NODE_ENV !== 'production'
   const apiVersion = process.env.PRODUCTION_API_VERSION
 
-  let fetched = await fetch(`${(dev ? "http://localhost:3000" : "https://curtus.tech")}/api/${apiVersion}/retrieve?id=${router.query.id}`, {method: 'GET' });
+  let fetched = await fetch(`${(dev ? "http://localhost:3000" : "https://curtus.tech")}/api/${apiVersion}/retrieve?id=${query.id}`, {method: 'GET' });
 
   let data = await fetched.json();
 

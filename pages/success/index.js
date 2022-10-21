@@ -39,7 +39,7 @@ export default function Redirect(){
 
       </main>
 
-      <Settings data={cookie.get("redirectSettings")}/>
+      <Settings user={cookie.get("redirectSettings")}/>
     </div>
   )
 

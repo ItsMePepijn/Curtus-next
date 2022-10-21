@@ -5,10 +5,10 @@ import styles from '../styles/RedirectSettings.module.scss'
 
 import * as cookie from '../modules/cookies'
 
-export default function Settings({data}){
-  let [isEnabled, setIsEnabled] = useState(data.isEnabled);
-  let [isDelayed, setIsDelayed] = useState(data.isDelayed);
-  let [delayTime, setDelayTime] = useState(data.delayTime);
+export default function Settings({user}){
+  let [isEnabled, setIsEnabled] = useState(user.isEnabled);
+  let [isDelayed, setIsDelayed] = useState(user.isDelayed);
+  let [delayTime, setDelayTime] = useState(user.delayTime);
 
   function empty() {}
 

@@ -116,7 +116,7 @@ export default function Page() {
 
       </main>
 
-      <Settings data={cookie.get("redirectSettings")}/>
+      <Settings user={cookie.get("redirectSettings")}/>
 
     </div>
   )
